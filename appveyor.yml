@@ -1,0 +1,42 @@
+version: 1.0.0
+image: Visual Studio 2017
+nuget:
+  account_feed: true
+before_build:
+  - appveyor-retry nuget restore
+
+configuration: Release
+build:
+  publish_nuget: true
+  publish_nuget_symbols: true
+  include_nuget_references: true
+  parallel: true
+  verbosity: minimal
+
+artifacts: 
+  - path: RedisOutputMulticache.MVC5.*.nupkg
+
+for:
+-
+  branches:
+    only:
+      - master
+
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+-
+  branches:
+      except:
+        - master
+
+  version: 1.0.0-{build}-{branch}
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}-{build}-{branch}'
+    assembly_file_version: '{version}-{build}-{branch}'
+    assembly_informational_version: '{version}-{build}-{branch}'

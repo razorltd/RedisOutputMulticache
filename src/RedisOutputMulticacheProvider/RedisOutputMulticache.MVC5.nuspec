@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>RedisOutputMulticache.MVC5</id>
+    <version>1.0.0</version>
+    <authors>Nick Briscoe</authors>
+    <owners>Razor</owners>
+    <licenseUrl>https://github.com/razorltd/RedisOutputMulticacheProvider/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://razor.co.uk</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+        ASP.NET MVC5 Redis output cache provider with fast expiring memory cache buffer
+    </description>
+    <copyright>Copyright 2017</copyright>
+    <tags>ASP.NET MVC5 Redis</tags>
+    <dependencies>
+      <dependency id="StackExchange.Redis" version="1.2.6" />
+    </dependencies>
+  </metadata>
+</package>
