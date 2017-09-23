@@ -1,4 +1,4 @@
-version: 1.0.0
+version: 1.0.0-{build}-{branch}
 image: Visual Studio 2017
 nuget:
   account_feed: true
@@ -12,9 +12,6 @@ build:
   include_nuget_references: true
   parallel: true
   verbosity: minimal
-
-artifacts: 
-  - path: RedisOutputMulticache.MVC5.*.nupkg
 
 for:
 -
